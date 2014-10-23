@@ -1,26 +1,29 @@
-#include <Bounce2.h>
+const int analogOutPin = 9; 
+int buttonPin = 4;
 
-int buttonPin = 0;
-const int analogOutPin = 10;
-Bounce b1 = Bounce();
+int buttonState = 0;      
 
 void setup() {
-  // put your setup code here, to run once:
+  // initialize serial communications at 9600 bps:
+  pinMode(analogOutPin, OUTPUT);
   pinMode(buttonPin, INPUT);
-
-  b1.attach(buttonPin);
-  b1.interval(20);
-
   Serial.begin(9600);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  Serial.println(b1.update());
-
-  if (b1.read() == 1) {
-    analogWrite(analogOutPin, 150);
-  } else {
-    analogWrite(analogOutPin, 20);
+  
+ buttonState = digitalRead(buttonPin);
+  Serial.println("Button State = " + buttonState);
+  // check if the pushbutton is pressed.
+  // if it is, the buttonState is HIGH:
+  if (buttonState == HIGH) {
+    // turn LED on:
+    analogWrite(analogOutPin, 255);
   }
+  else {
+    // turn LED off:
+    analogWrite(analogOutPin, 50);
+  }
+  delay(2);
+
 }
