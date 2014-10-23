@@ -1,28 +1,36 @@
-const int analogOutPin = 9; 
-int buttonPin = 4;
+int wheel1 = 10; 
+int wheel2 = 9;
 
-int buttonState = 0;      
+int button1 = 6;
+int button2 = 4;
+
+int button1State = 0;      
+int button2State = 0;
 
 void setup() {
-  // initialize serial communications at 9600 bps:
-  pinMode(analogOutPin, OUTPUT);
-  pinMode(buttonPin, INPUT);
+  pinMode(wheel1, OUTPUT);
+  pinMode(wheel2, OUTPUT);
+  pinMode(button1, INPUT);
+  pinMode(button2, INPUT);
   Serial.begin(9600);
 }
 
 void loop() {
   
- buttonState = digitalRead(buttonPin);
-  Serial.println("Button State = " + buttonState);
-  // check if the pushbutton is pressed.
-  // if it is, the buttonState is HIGH:
-  if (buttonState == HIGH) {
-    // turn LED on:
-    analogWrite(analogOutPin, 255);
+ button1State = digitalRead(button1);
+ button2State = digitalRead(button2);
+ 
+  Serial.println("Button State = " + button1State);
+  Serial.println("Button State = " + button2State);
+
+  
+  if (button1State == HIGH) {
+
+    analogWrite(wheel1, 255);
   }
   else {
-    // turn LED off:
-    analogWrite(analogOutPin, 50);
+    
+    analogWrite(wheel1, 50);
   }
   delay(2);
 
