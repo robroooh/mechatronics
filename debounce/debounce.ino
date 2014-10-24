@@ -31,11 +31,14 @@ void loop() {
   else if (button1State == LOW && button2State == HIGH) {
     analogWrite(wheel1, 100);
     analogWrite(wheel2, 200);
+  } else if (button1State == LOW && button2State == LOW) {
+    analogWrite(wheel1, 0);
+    analogWrite(wheel2, 0);
   } else {
     analogWrite(wheel1, 200);
     analogWrite(wheel2, 200);
   }
 
-  delay(10);
+  delay(3);
 
 }
