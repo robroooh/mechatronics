@@ -35,8 +35,8 @@ void loop() {
     analogWrite(wheel1, 0);
     analogWrite(wheel2, 0);
   } else {
-    analogWrite(wheel1, 200);
-    analogWrite(wheel2, 200);
+    analogWrite(wheel1, 150);
+    analogWrite(wheel2, 150);
   }
 
   delay(3);
