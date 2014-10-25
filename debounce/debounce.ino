@@ -24,17 +24,17 @@ void loop() {
   Serial.println("Button State = " + button2State);
 
 
-  if (button1State == HIGH && button2State == LOW) {
+  if (button1State == HIGH && button2State == LOW) { // turn left
     analogWrite(wheel1, 200);
     analogWrite(wheel2, 100);
   }
-  else if (button1State == LOW && button2State == HIGH) {
+  else if (button1State == LOW && button2State == HIGH) { // turn tight
     analogWrite(wheel1, 100);
     analogWrite(wheel2, 200);
-  } else if (button1State == LOW && button2State == LOW) {
+  } else if (button1State == LOW && button2State == LOW) { // stop
     analogWrite(wheel1, 0);
     analogWrite(wheel2, 0);
-  } else {
+  } else {// go straight
     analogWrite(wheel1, 150);
     analogWrite(wheel2, 150);
   }
