@@ -26,10 +26,10 @@ void loop() {
 
   if (button1State == HIGH && button2State == LOW) { // turn left
     analogWrite(wheel1, 255);
-    analogWrite(wheel2, 180);
+    analogWrite(wheel2, 200);
   }
   else if (button1State == LOW && button2State == HIGH) { // turn tight
-    analogWrite(wheel1, 180);
+    analogWrite(wheel1, 200);
     analogWrite(wheel2, 255);
   } else if (button1State == LOW && button2State == LOW) { // stop
     analogWrite(wheel1, 0);
