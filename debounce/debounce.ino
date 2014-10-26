@@ -25,18 +25,18 @@ void loop() {
 
 
   if (button1State == HIGH && button2State == LOW) { // turn left
-    analogWrite(wheel1, 200);
-    analogWrite(wheel2, 100);
+    analogWrite(wheel1, 255);
+    analogWrite(wheel2, 180);
   }
   else if (button1State == LOW && button2State == HIGH) { // turn tight
-    analogWrite(wheel1, 100);
-    analogWrite(wheel2, 200);
+    analogWrite(wheel1, 180);
+    analogWrite(wheel2, 255);
   } else if (button1State == LOW && button2State == LOW) { // stop
     analogWrite(wheel1, 0);
     analogWrite(wheel2, 0);
   } else {// go straight
-    analogWrite(wheel1, 150);
-    analogWrite(wheel2, 150);
+    analogWrite(wheel1, 255);
+    analogWrite(wheel2, 255);
   }
 
   delay(3);
