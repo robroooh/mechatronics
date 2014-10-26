@@ -20,16 +20,15 @@ void loop() {
   button1State = digitalRead(button1);
   button2State = digitalRead(button2);
 
-  Serial.println("Button State = " + button1State);
-  Serial.println("Button State = " + button2State);
-
+  Serial.print("Button1 State = ");
+ Serial.println(button1State);
+  Serial.print("Button2 State = ");
+ Serial.println(button2State);
 
   if (button1State == HIGH && button2State == LOW) { // turn left
     analogWrite(wheel1, 255);
-    analogWrite(wheel2, 200);
   }
   else if (button1State == LOW && button2State == HIGH) { // turn tight
-    analogWrite(wheel1, 200);
     analogWrite(wheel2, 255);
   } else if (button1State == LOW && button2State == LOW) { // stop
     analogWrite(wheel1, 0);
@@ -38,7 +37,5 @@ void loop() {
     analogWrite(wheel1, 255);
     analogWrite(wheel2, 255);
   }
-
-  delay(3);
 
 }
