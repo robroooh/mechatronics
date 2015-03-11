@@ -38,4 +38,9 @@ void loop() {
     analogWrite(wheel2, 255);
   }
 
+<<<<<<< HEAD
+=======
+  delay(300);
+
+>>>>>>> origin/master
 }
